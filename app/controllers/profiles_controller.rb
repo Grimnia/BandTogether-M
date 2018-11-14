@@ -14,7 +14,6 @@ class ProfilesController < ApplicationController
     @profile.update(profile_params)
     redirect_to root_path
   end
-  
   private 
   
     def set_profile 
