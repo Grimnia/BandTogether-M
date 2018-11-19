@@ -1,7 +1,5 @@
 import React from 'react'
-
 const User = props => {
-
   return (
     <div className="user-main-div">
       <div>

@@ -13,8 +13,9 @@ const headers = {
 export default class Users extends Component {
   state = {
     users: [],
+    concerts: [],
     image: [],
-    like: false,
+    like: false
   }
   toggleModal = () => {
     this.setState({ like: !this.state.like })
@@ -23,8 +24,9 @@ export default class Users extends Component {
     axios.get('/likes.json')
       .then((response) => {
         const users = response.data.users
+        const concerts = response.data.concerts
         const image = response.data.images
-        this.setState({ users, image })
+        this.setState({ users, image, concerts })
       })
   }
   handleLike = (userId) => {
@@ -52,7 +54,6 @@ export default class Users extends Component {
   render() {
     const user = this.state.users[0]
     if (user != undefined) {
-
       return (
         <div>
           <User
